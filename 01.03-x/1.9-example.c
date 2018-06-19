@@ -1,17 +1,23 @@
 #include <stdio.h>
+#include "my-get-line.h"
 
 #define MAX_LINE 1000
 
-int myGetLine(char line[]);
+//int myGetLine(char line[]);
 
 void copy(char to[], char from[]);
 
+int max; // max length of line
+
 int main() {
 	int len; // length of current line
-	int max; // max length of line
+//	int max;
 
 	char line[MAX_LINE];
 	char longest[MAX_LINE];
+
+	// need to show extern variable
+//	extern int max;
 
 	max = 0;
 
@@ -27,32 +33,6 @@ int main() {
 	}
 
 	return 0;
-}
-
-int myGetLine(char s[]) {
-	int c, i;
-	i = 0;
-
-	while ((c = getchar()) != EOF && c != '\n') {
-		s[i] = c;
-		i++;
-	}
-
-
-/*
-	for (i = 0; i < lim - 1 && (c = getchar()) != EOF && c != '\n'; i++) {
-		s[i] = c;
-	}
-*/
-
-	if (c == '\n') {
-		s[i] = c;
-		i++;
-	}
-
-	s[i] = '\0';
-
-	return i;
 }
 
 void copy(char to[], char from[]) {
